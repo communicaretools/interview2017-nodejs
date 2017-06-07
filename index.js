@@ -5,12 +5,13 @@ const bodyParser = require('body-parser')
 
 app.set('etag', false)
 app.use(express.static('public'))
+app.use(bodyParser.json())
 app.use(function (req, res, next) {
-  res.header("Content-Type",'application/json');
-  next();
-});
-app.use(bodyParser.json());
-app.use(json());
+  if (req.url.indexOf('/api') >= 0) {
+    res.header("Content-Type",'application/json')
+  }
+  next()
+})
 
 app.use('/api/registrations', require('./server/registrations.js'))
 app.use('/api/studies', require('./server/studies.js'))
