@@ -8,7 +8,7 @@ router.get('/', function getAllRegistrations(req, res) {
             res.sendStatus(500)
             return
         }
-        res.send(JSON.stringify(regs))
+        res.send(regs)
     })
 })
 
@@ -18,7 +18,7 @@ router.get('/:id', function getOneRegistration(req, res) {
             res.sendStatus(500)
             return
         }
-        res.send(JSON.stringify(reg))
+        res.send(reg)
     })
 })
 
