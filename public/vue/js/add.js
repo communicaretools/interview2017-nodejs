@@ -5,7 +5,7 @@ const Add = {
             <div class="form-group">
                 This is the add registration form
             </div>
-            <button type="submit" class="btn btn-primary" v-on:click="submit()">Submit</button>
+            <button type="button" class="btn btn-primary" v-on:click="submit()">Submit</button>
             <router-link to="/list" class="btn btn-default">Cancel</router-link>
         </form>
     </div>
